@@ -8,6 +8,8 @@ body {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: var(--main-font);
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Пойдем по пути от мобильной версии и темной темы - это всем нравится */
@@ -166,6 +168,7 @@ margin-bottom: 20px;
 }
 
 .footer {
+  block-size: 100vh;
   padding-left: var(--padding-s);
   padding-right: var(--padding-s);
   display: grid;
