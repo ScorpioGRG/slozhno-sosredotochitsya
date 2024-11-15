@@ -352,12 +352,6 @@ margin-bottom: 20px;
   .article:nth-child(even) {
     grid-auto-flow: column;
     counter-reset: chapter;
-    --chapt: 1;
-    --chapt: calc(var(--chapt) + 1);
-    /*--chapt: calc(var(--chapt) + 1);*/
-    counter(chapter);
-    counter-increment: chapter; 
-    counter-increment: chapter; 
   }
 
   .article {
