@@ -2,12 +2,12 @@
 
 body {
   max-inline-size: 1025px; /*отладка на 1024px*/
-  
   background-color: var(--bg-color);
 }
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: var(--main-font);
+  background-attachment: fixed;
 }
 
 /* Пойдем по пути от мобильной версии и темной темы - это всем нравится */
@@ -72,11 +72,11 @@ box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 /*этот блок неизменен 375 - 768, шрифты, размеры - остаются*/
-.header__theme-menu-button{
+.header__theme-menu-button {
   background-color: transparent;
   border: none;
   font-weight: 400;
-  font-size: 18px; 
+  font-size: 18px;
   line-height: 100%;
   text-align: center;
   color: var(--accent-color);
@@ -180,14 +180,14 @@ margin-bottom: 20px;
 
 /*для избежания сюрпризов все @media в конце*/
 
-@media (width >= 768px) { 
+@media (width >= 768px) {
   .text__logo {
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .header { 
+  .header {
     padding: var(--padding-m);
-    min-block-size: clamp(64rem, 112rem  - 100vw, 48rem) /* calc(1792 - width)*/; /*это не работает*/ 
+    min-block-size: clamp(64rem, 112rem  - 100vw, 48rem)/* calc(1792 - width)*/;/*это не работает*/
     grid-template-columns: 1fr 1fr;
   }
 
@@ -318,8 +318,8 @@ margin-bottom: 20px;
     text-align: center;
   }
 
-  .footer >.useless__decor_downleft_halfsquare { 
-    grid-row: 3; 
+  .footer > .useless__decor_downleft_halfsquare {
+    grid-row: 3;
     grid-column: 1;
   }
 
@@ -330,13 +330,13 @@ margin-bottom: 20px;
     grid-template-rows: 26px 932px 26px;  /*тут можно клампом, но потом */
     padding-bottom: var(--padding-m);
   }
-
 }
 
-@media (width >= 1024px) { 
+@media (width >= 1024px) {
   .header { 
     min-block-size: 768px;
   }
+
   .header__theme-menu {
     align-self: center;
     justify-self: center;
@@ -352,18 +352,15 @@ margin-bottom: 20px;
   .article:nth-child(even) {
     grid-auto-flow: column;
     counter-reset: chapter;
+    column-gap: 20px;
   }
 
   .article {
     column-gap: 10px;
   }
 
-  .article:nth-child(even) {
-    column-gap: 20px;
-  }
-
   .article:nth-child(even) .article__chapter:nth-child(2) {
-    counter-increment: chapter; 
+    counter-increment: chapter;
     
     /*--chapt: calc(var(--chapt) + 1);*/
     grid-column: 1;

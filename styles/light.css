@@ -40,7 +40,7 @@
     border-left: 1px solid var(--main-text-color);
   }
 
-  .header__theme-menu-button{
+  .header__theme-menu-button {
     color: var(--main-text-color);
   }
 
@@ -76,7 +76,7 @@
       border-left: 1px solid var(--main-text-color);
     }
   
-    .header__theme-menu-button{
+    .header__theme-menu-button {
       color: var(--main-text-color);
     }
 }
