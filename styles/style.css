@@ -10,6 +10,8 @@ body {
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 /* Пойдем по пути от мобильной версии и темной темы - это всем нравится */
@@ -336,7 +338,7 @@ margin-bottom: 20px;
 }
 
 @media (width >= 1024px) {
-  .header { 
+  .header {
     min-block-size: 768px;
   }
 
