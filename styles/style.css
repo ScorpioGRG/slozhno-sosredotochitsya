@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 /* Пойдем по пути от мобильной версии и темной темы - это всем нравится */
@@ -185,7 +186,7 @@ margin-bottom: 20px;
 .image {
   width: 100%;
   /*object-fit: cover; /*ни на что не влияет*/
-  margin-bottom: 6px; /*по макету 10*/
+  margin-bottom: 6px;/*по макету 10*/
 }
 
 .footer {
