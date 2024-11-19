@@ -315,7 +315,8 @@ margin-bottom: 20px;
     block-size: 100%;
     /*max-block-size: 100%;*/
     object-fit: cover;
-    margin-bottom: 0px;
+    margin: 0px;
+    padding-bottom: 0px;
   }
 
   .image:nth-child(2) {
@@ -399,14 +400,13 @@ margin-bottom: 20px;
   }
 
   .image:nth-child(4) {
-    height: 99%;
+    height: 100%;
   }
   .image:nth-child(6) {
     grid-column: 2/4;
     grid-row: 4;
     object-fit: cover;
-    margin-top: 5px;
-    height: 97%;
+    width:  100%;
   }
   
   .footer {
