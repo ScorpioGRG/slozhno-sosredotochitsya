@@ -31,12 +31,15 @@ body {
 }
 
 .useless__decor {
+  position: relative;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   gap: 4px;
   background-color: transparent;
   color: var(--accent-color);
+  inline-size: auto;
+  justify-self: end;
 }
 
 .useless__decor-text {
@@ -44,14 +47,39 @@ font-weight: 400;
 font-size: 18px;
 line-height: 139%;
 text-transform: uppercase;
+
 }
 
+
+/*.useless__decor-text::after {
+  content:'';
+  position: relative;
+  left: 20px;
+  border-radius: 100%;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+
+}*/
+
 .useless__decor_circle {
-border-radius: 100%;
-width: 9px;
-height: 9px;
-background-color: var(--accent-color);
-box-shadow: 0 0 4px 2px var(--accent-color);
+  border-radius: 100%;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.useless__decor_circle::before {
+  content:'REC';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 139%;
+  text-transform: uppercase;
+  position: relative;
+  right: 40px;
+  bottom: 8px;
 }
 
 .useless__decor_upright_halfsquare {
@@ -352,7 +380,7 @@ margin-bottom: 20px;
   }
 
   .footer {
-    min-block-size: 100vh; 
+    min-block-size: 100vh;
     display: grid;
     grid-template-rows: 26px auto 26px;  /*тут можно клампом, но потом  26px 932px 26px - 768*/
     padding: var(--padding-m);
