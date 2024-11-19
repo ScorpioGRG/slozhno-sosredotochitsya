@@ -17,66 +17,36 @@
   --sub-title-color: #353430;
   --main-text-color: #353430;
   --bg-color: #FFF1F7;
+  --article__title-color: #353430;
+  --decor-color: #353430;
 
   .header__theme-menu-button_type_light {
-    border: 1px solid var(--main-text-color);
-  }
-
-  .article__title {
-    color: var(--sub-title-color);
+   outline: 1px solid var(--decor-color); /*--decor-color*/
   }
 
   .useless__decor-text, .useless__decor_circle {
     display: none;
   }
 
-  .useless__decor_upright_halfsquare {
-    border-top: 1px solid var(--main-text-color);
-    border-right: 1px solid var(--main-text-color);
-  }
-
-  .useless__decor_downleft_halfsquare {
-    border-bottom: 1px solid var(--main-text-color);
-    border-left: 1px solid var(--main-text-color);
-  }
-
-  .header__theme-menu-button {
-    color: var(--main-text-color);
-  }
-
 }
 
 @media (prefers-color-scheme: light) {
   :root {
+/* Дублируем переменные светлой темы */
     --accent-color: #FF8DCB;
     --background-image: url(../images/cover-image-light.png);
     --title-color:  #FFC2E6;
     --sub-title-color: #353430;
     --main-text-color: #353430;
     --bg-color: #FFF1F7;
-    /* Дублируем переменные светлой темы */
-    }
-   
-  
-    .article__title {
-      color: var(--sub-title-color);
-    }
-  
+    --article__title-color: #353430;
+    --decor-color: #353430;
+
     .useless__decor-text, .useless__decor_circle {
       display: none;
-    }
-  
-    .useless__decor_upright_halfsquare {
-      border-top: 1px solid var(--main-text-color);
-      border-right: 1px solid var(--main-text-color);
-    }
-  
-    .useless__decor_downleft_halfsquare {
-      border-bottom: 1px solid var(--main-text-color);
-      border-left: 1px solid var(--main-text-color);
-    }
-  
-    .header__theme-menu-button {
-      color: var(--main-text-color);
-    }
+    }    
+  }
 }
+   
+  
+ 

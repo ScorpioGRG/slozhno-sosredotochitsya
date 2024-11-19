@@ -1,8 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 body {
-  max-width: 1024px;
-  max-inline-size: 1024px;/*отладка на 1024px 768 375*/
+  max-inline-size: 1024px;/*ограничим 1024px*/
   background-color: var(--bg-color);
 }
 
@@ -20,7 +19,7 @@ body {
 
 .header {
   display: grid;
-  min-block-size:  100vh; /*высота 668px на 375,  высота 1024 на 768;  масшиабируем от телефона до планшета если клампом- то так clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem)*/
+  min-block-size: 100vh; /*высота 668px на 375,  высота 1024 на 768;*/
   padding: var(--padding-s);
   grid-template-columns: 1fr; /**/
   grid-template-rows: 26px 1fr auto 1fr 26px; /*26px на всех разрешениях*/
@@ -37,38 +36,17 @@ body {
   align-items: center;
   gap: 4px;
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--decor-color);
   inline-size: auto;
   justify-self: end;
 }
-
-.useless__decor-text {
-font-weight: 400;
-font-size: 18px;
-line-height: 139%;
-text-transform: uppercase;
-
-}
-
-
-/*.useless__decor-text::after {
-  content:'';
-  position: relative;
-  left: 20px;
-  border-radius: 100%;
-  width: 9px;
-  height: 9px;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
-
-}*/
 
 .useless__decor_circle {
   border-radius: 100%;
   width: 9px;
   height: 9px;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--decor-color);
+  box-shadow: 0 0 4px 2px var(--decor-color);
 }
 
 .useless__decor_circle::before {
@@ -78,7 +56,7 @@ text-transform: uppercase;
   line-height: 139%;
   text-transform: uppercase;
   position: relative;
-  right: 40px;
+  right: 42px;
   bottom: 8px;
 }
 
@@ -87,15 +65,15 @@ text-transform: uppercase;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   width: 26px;
   height: 26px;
 }
 
 .useless__decor_downleft_halfsquare {
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
   width: 26px;
   height: 26px;
 }
@@ -113,21 +91,19 @@ text-transform: uppercase;
   font-size: 18px;
   line-height: 100%;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--decor-color);
   text-transform: lowercase;
   width: 70px; /*везде*/
   height: 26px; /*везде*/
 }
 
-
-
 .header__theme-menu-button:focus {
   outline: none;
-  text-decoration: underline solid var(--accent-color);
+  text-decoration: underline solid var(--decor-color);
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--decor-color);
 }
 
 .header__theme-menu-list .header__theme-menu-item:not(:last-child) {
@@ -172,7 +148,7 @@ font-family: var(--main-font);
 font-weight: 700;
 font-size: 18px;
 line-height: 130%;
-color: var(--accent-color);
+color: var(--article__title-color); /*--article__title-color*/
 margin-bottom: 20px;
 }
 
@@ -194,7 +170,7 @@ margin-bottom: 20px;
   background-color: var(--accent-color);
   color: var(--sub-title-color);
   margin-bottom: 10px;
-  margin-top: 20px; /*схлопнуло 10px от .article__chapter, в целом, то  и ОК, наверное */
+  margin-top: 20px;
 }
 
 .article__text {
@@ -208,17 +184,17 @@ margin-bottom: 20px;
 
 .image {
   width: 100%;
-  /*object-fit: cover;*/
+  /*object-fit: cover; /*ни на что не влияет*/
   margin-bottom: 6px; /*по макету 10*/
 }
 
 .footer {
-  min-block-size: 100vh ; /*высота 668px на 375,  высота 1024 на 768;  масшиабируем от телефона до планшета  clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem)*/
+  min-block-size: 100vh ; /*высота 668px на 375,  высота 1024 на 768;  масштабируем от телефона до планшета clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem), по условию все же 100vh*/
   width: 100%;
   padding-left: var(--padding-s);
   padding-right: var(--padding-s);
   display: grid;
-  grid-template-rows: 26px auto 26px; /*26px 595px 26px*/
+  grid-template-rows: 26px auto 26px; /*26px 595px 26px - под макет*/
   padding-bottom: var(--padding-s);
   text-align: center;
 }
@@ -245,7 +221,6 @@ margin-bottom: 20px;
 
   .header {
     padding: var(--padding-m);
-    max-block-size:  clamp(64rem, 112rem  + -100vw, 48rem)/* calc(1792 - width)*/;/* 768px это не работает*/
     grid-template-columns: 1fr 1fr;
     margin-bottom: var(--marging-m);
   }

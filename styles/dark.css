@@ -16,8 +16,11 @@
   --main-text-color: #F1B2CE;
   --bg-color: #000028;
 
+  --decor-color: #FF0070;
+  --article__title-color: #FF0070;
+
   .header__theme-menu-button_type_dark {
-    border: 1px solid var(--accent-color);
+    outline: 1px solid var(--decor-color);
   }
 }
 
