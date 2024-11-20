@@ -98,13 +98,22 @@ body {
   height: 26px; /*везде*/
 }
 
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
 .header__theme-menu-button:focus {
   outline: none;
-  text-decoration: underline solid var(--decor-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+ border-bottom: 1px solid var(--decor-color);
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--decor-color);
+ outline: 1px solid var(--decor-color);
+ cursor: pointer;
 }
 
 .header__theme-menu-list .header__theme-menu-item:not(:last-child) {
@@ -149,7 +158,7 @@ font-family: var(--main-font);
 font-weight: 700;
 font-size: 18px;
 line-height: 130%;
-color: var(--article__title-color); /*--article__title-color*/
+color: var(--article__title-color);
 margin-bottom: 20px;
 }
 
@@ -185,7 +194,8 @@ margin-bottom: 20px;
 
 .image {
   width: 100%;
-  /*object-fit: cover; /*ни на что не влияет*/
+  object-fit: cover; 
+  object-position: 50% 50%;
   margin-bottom: 6px;/*по макету 10*/
 }
 
@@ -207,9 +217,14 @@ margin-bottom: 20px;
 
 .accent_shadowed__link:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .accent_shadowed__link:focus {
+  outline: none;
+}
+
+.accent_shadowed__link:focus-visible {
   outline: 1px solid var(--main-text-color);
 }
 
@@ -251,6 +266,7 @@ margin-bottom: 20px;
     grid-row: 5;
     grid-column: 1;
   }
+  
   .article {
     padding-left: var(--padding-m);
     padding-right: var(--padding-m);
@@ -312,12 +328,8 @@ margin-bottom: 20px;
   }
 
   .image {
-    inline-size: 100%;
     block-size: 100%;
-    /*max-block-size: 100%;*/
-    object-fit: cover;
     margin: 0px;
-    padding-bottom: 0px;
   }
 
   .image:nth-child(2) {
@@ -359,14 +371,14 @@ margin-bottom: 20px;
   .footer {
     min-block-size: 100vh;
     display: grid;
-    grid-template-rows: 26px auto 26px;  /*тут можно клампом, но потом  26px 932px 26px - 768*/
+    grid-template-rows: 26px auto 26px;  /*26px 932px 26px - 768*/
     padding: var(--padding-m);
   }
 }
 
 @media (width >= 1024px) {
   .header {
-    min-block-size: 100vh; /*768*/
+    min-block-size: 100vh;
   }
 
   .header__theme-menu {
@@ -386,7 +398,6 @@ margin-bottom: 20px;
   }
 
   .article:nth-child(even) .article__title {
-
     grid-row-start: 1;
     grid-row-end: 2;
   }
