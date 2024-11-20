@@ -194,7 +194,7 @@ margin-bottom: 20px;
 
 .image {
   width: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   object-position: 50% 50%;
   margin-bottom: 6px;/*по макету 10*/
 }
@@ -266,7 +266,7 @@ margin-bottom: 20px;
     grid-row: 5;
     grid-column: 1;
   }
-  
+
   .article {
     padding-left: var(--padding-m);
     padding-right: var(--padding-m);
