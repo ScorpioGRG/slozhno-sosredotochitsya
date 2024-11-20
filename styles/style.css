@@ -7,7 +7,7 @@ body {
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@ body {
 }
 
 .text__logo {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /*116px at 375 условие для 375 - 768*/
   line-height: 83%;
@@ -133,7 +133,7 @@ body {
 }
 
 .header__title {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -154,7 +154,7 @@ body {
 }  
 
 .article__title {
-font-family: var(--main-font);
+font-family: var(--main-font), sans-serif;
 font-weight: 700;
 font-size: 18px;
 line-height: 130%;
@@ -163,7 +163,7 @@ margin-bottom: 20px;
 }
 
 .article__chapter {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -173,7 +173,7 @@ margin-bottom: 20px;
 }
 
 .article__sub__chapter {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
@@ -184,7 +184,7 @@ margin-bottom: 20px;
 }
 
 .article__text {
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
