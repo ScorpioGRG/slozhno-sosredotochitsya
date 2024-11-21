@@ -18,8 +18,8 @@
   --decor-color: #FF0070;
   --article__title-color: #FF0070;
 
-  .header__theme-menu-button_type_dark {
+  /*.header__theme-menu-button_type_dark {
     outline: 1px solid var(--decor-color);
-  }
+  }*/
 }
 

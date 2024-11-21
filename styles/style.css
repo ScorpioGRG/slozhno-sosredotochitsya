@@ -7,13 +7,12 @@ body {
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font), monospace;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  overflow-x: hidden;
 }
 
 /* Пойдем по пути от мобильной версии и темной темы - это всем нравится */
@@ -50,15 +49,16 @@ body {
   box-shadow: 0 0 4px 2px var(--decor-color);
 }
 
+/*из за этого скрол*/
 .useless__decor_circle::before {
   content:'REC';
   font-weight: 400;
   font-size: 18px;
   line-height: 139%;
   text-transform: uppercase;
-  position: relative;
+  position: absolute;
   right: 42px;
-  bottom: 8px;
+  bottom: 0px;
 }
 
 .useless__decor_upright_halfsquare {
@@ -100,6 +100,7 @@ body {
 
 .header__theme-menu-button_active {
   pointer-events: none;
+  outline: 1px solid var(--decor-color); 
 }
 
 .header__theme-menu-button:focus {
@@ -121,7 +122,7 @@ body {
 }
 
 .text__logo {
-  font-family: var(--main-font), sans-serif;
+  /*font-family: var(--main-font), sans-serif;*/
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /*116px at 375 условие для 375 - 768*/
   line-height: 83%;
@@ -133,7 +134,7 @@ body {
 }
 
 .header__title {
-  font-family: var(--main-font), sans-serif;
+ /* font-family: var(--main-font), sans-serif;*/
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -149,12 +150,12 @@ body {
   margin-bottom: 50px;
 }
 
-.article:last-child {
-  margin-bottom: 40px;
+.article__layout_gallery {
+  margin-bottom: var(--marging-s); /*was 40*/
 }  
 
 .article__title {
-font-family: var(--main-font), sans-serif;
+/*font-family: var(--main-font), sans-serif;*/
 font-weight: 700;
 font-size: 18px;
 line-height: 130%;
@@ -163,7 +164,7 @@ margin-bottom: 20px;
 }
 
 .article__chapter {
-  font-family: var(--main-font), sans-serif;
+  /*font-family: var(--main-font), sans-serif;*/
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -184,7 +185,7 @@ margin-bottom: 20px;
 }
 
 .article__text {
-  font-family: var(--main-font), sans-serif;
+  /*font-family: var(--main-font), sans-serif;*/
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
@@ -274,39 +275,39 @@ margin-bottom: 20px;
     column-gap: 20px;
   }
 
-/*гипотетически считаем, что стили статей должны чередоваться через одну*/
+/*два типа статей, назовем их "a" и "b"*/
 
-  .article:nth-child(odd) {
+  .article__layout_a {
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
 
-  .article:nth-child(odd) .article__title {
+  .article__layout_a .article__title {
     grid-column-start: 1;
     grid-row: span 3;
   }
 
-  .article:nth-child(odd) section {
+  .article__layout_a section {
     grid-column-start: 2;
   }
 
-  .article:nth-child(even) {
+  .article__layout_b {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .article:nth-child(even) section {
+  .article__layout_b section {
     grid-column: 1/4;
   }
 
-  .article:nth-child(even) .article__title {
+  .article__layout_b .article__title {
     grid-column: 1/4;
     max-width: 30%;
   }
 
   /*гипотетически считаем, что картинки - всегда последняя карточка*/
 
-  .article:last-child {
+  .article__layout_gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -314,7 +315,7 @@ margin-bottom: 20px;
     margin-bottom: var(--marging-m);
   }
 
-  .article:last-child .article__chapter {
+  .article__layout_gallery .article__chapter {
     grid-column: span 3;
     margin-bottom: 0px;
   }
@@ -369,17 +370,17 @@ margin-bottom: 20px;
   }
 
   .footer {
-    min-block-size: 100vh;
-    display: grid;
-    grid-template-rows: 26px auto 26px;  /*26px 932px 26px - 768*/
+    /*min-block-size: 100vh;*/
+    /*display: grid;*/
+    /*grid-template-rows: 26px auto 26px;*/  /*26px 932px 26px - 768*/
     padding: var(--padding-m);
   }
 }
 
 @media (width >= 1024px) {
-  .header {
+/*  .header {
     min-block-size: 100vh;
-  }
+  }*/
 
   .header__theme-menu {
     align-self: center;
@@ -393,11 +394,11 @@ margin-bottom: 20px;
     margin-top: 10px;
     gap: 10px;
   }
-  .article:nth-child(even) {
+  .article__layout_b {
     column-gap: 20px;
   }
 
-  .article:nth-child(even) .article__title {
+  .article__layout_b .article__title {
     grid-row-start: 1;
     grid-row-end: 2;
   }
@@ -407,19 +408,20 @@ margin-bottom: 20px;
   }
 
 
-  .article:nth-child(even) section {
+  .article__layout_b section {
     grid-column: auto;
   }
 
-  .image:nth-child(4) {
+
+ /* .image:nth-child(4) { 
     height: 100%;
-  }
-  .image:nth-child(6) {
+  }*/
+  /*.image:nth-child(6) {
     grid-column: 2/4;
     grid-row: 4;
     object-fit: cover;
     width:  100%;
-  }
+  }*/
   
   .footer {
     min-block-size: 100vh; /*по рекомендации*/

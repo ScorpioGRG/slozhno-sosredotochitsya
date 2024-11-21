@@ -20,9 +20,9 @@
   --article__title-color: #353430;
   --decor-color: #353430;
 
-  .header__theme-menu-button_type_light {
-   outline: 1px solid var(--decor-color); /*--decor-color*/
-  }
+  /*.header__theme-menu-button_type_light {
+   outline: 1px solid var(--decor-color); 
+  }*/
 
   .useless__decor-text, .useless__decor_circle {
     display: none;
