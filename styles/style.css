@@ -79,6 +79,39 @@ body {
   height: 26px;
 }
 
+.useless__decor_test {
+  position: relative;
+  /*пустой класс для тестирования*/
+}
+
+.useless__decor_test::before {
+  content: '';
+  position: absolute; 
+  border-top: 1px solid var(--main-text-color);
+  border-right: 1px solid var(--main-text-color);
+  width: 26px;
+  height: 26px;
+  top: calc(var(--padding-m) + 26px);
+  left: calc(100% - 46px);
+}
+
+.useless__decor_test::after {
+  content: '';
+  position: absolute; 
+  border-bottom: 1px solid var(--main-text-color);
+  border-left: 1px solid var(--main-text-color);
+  width: 26px;
+  height: 26px;
+  bottom: var(--padding-m);
+  right: calc(100% - 46px);
+}
+
+.header::before {
+  content: '1';
+  position: absolute; 
+
+}
+
 .header__theme-menu {
   align-self: center;
   justify-self: end;
@@ -109,12 +142,12 @@ body {
 
 .header__theme-menu-button:focus-visible {
   outline: none;
- border-bottom: 1px solid var(--decor-color);
+  border-bottom: 1px solid var(--decor-color);
 }
 
 .header__theme-menu-button:hover {
- outline: 1px solid var(--decor-color);
- cursor: pointer;
+  outline: 1px solid var(--decor-color);
+  cursor: pointer;
 }
 
 .header__theme-menu-list .header__theme-menu-item:not(:last-child) {
