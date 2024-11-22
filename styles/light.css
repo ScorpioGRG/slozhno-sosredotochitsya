@@ -34,6 +34,7 @@
   :root {
 /* Дублируем переменные светлой темы */
     --accent-color: #FF8DCB;
+    --accent-color-transparent: #FF8DCB66;
     --background-image: url(../images/cover-image-light.png);
     --title-color:  #FFC2E6;
     --sub-title-color: #353430;

@@ -81,35 +81,69 @@ body {
 
 .useless__decor_test {
   position: relative;
-  /*пустой класс для тестирования*/
+  /*пустой класс для тестирования через него рисуем уголки*/
 }
 
 .useless__decor_test::before {
   content: '';
-  position: absolute; 
+  /*position: relative;*/
   border-top: 1px solid var(--main-text-color);
   border-right: 1px solid var(--main-text-color);
   width: 26px;
   height: 26px;
-  top: calc(var(--padding-m) + 26px);
-  left: calc(100% - 46px);
+ /* top: calc(var(--padding-m) + 26px);
+  left: calc(100% - 46px);*/
+  grid-row: 1;
+  grid-column: -2;
+  justify-self:last baseline;
 }
 
 .useless__decor_test::after {
-  content: '';
-  position: absolute; 
+  content:'';
+  /*position: absolute;*/ 
   border-bottom: 1px solid var(--main-text-color);
   border-left: 1px solid var(--main-text-color);
   width: 26px;
   height: 26px;
-  bottom: var(--padding-m);
-  right: calc(100% - 46px);
+  grid-row: -2;
+  /*bottom: var(--padding-m);
+  right: calc(100% - 46px);*/
 }
 
-.header::before {
-  content: '1';
-  position: absolute; 
+.footer.useless__decor_test::before {
+  content: '';
+  /*position: relative;*/
+  border-top: 1px solid var(--main-text-color);
+  border-right: 1px solid var(--main-text-color);
+  width: 26px;
+  height: 26px;
+ /* top: calc(var(--padding-m) + 26px);
+  left: calc(100% - 46px);*/
+  grid-row: 1;
+  grid-column: -1;
+  justify-self:last baseline;
+}
 
+.recording_sign {
+  position: absolute;
+  top: calc(var(--padding-s) + 5px);
+  right:  calc(var(--padding-s) + 20px);
+}
+
+.recording_sign::before {
+  content:'REC';
+  padding-right: 10px;
+}
+
+.recording_sign::after {
+  content:'';
+  position: absolute;
+  border-radius: 100%;
+  width: 9px;
+  height: 9px;
+  margin-top: 5px;
+  background-color: var(--decor-color);
+  box-shadow: 0 0 4px 2px var(--decor-color);
 }
 
 .header__theme-menu {
@@ -146,7 +180,7 @@ body {
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--decor-color);
+  outline: 1px solid color(from var(--decor-color) srgb r g b /0.4);
   cursor: pointer;
 }
 
@@ -250,8 +284,9 @@ margin-bottom: 20px;
 }
 
 .accent_shadowed__link:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   cursor: pointer;
+  border-bottom: 1px solid var(--main-text-color);
 }
 
 .accent_shadowed__link:focus {
@@ -273,6 +308,12 @@ margin-bottom: 20px;
     padding: var(--padding-m);
     grid-template-columns: 1fr 1fr;
     margin-bottom: var(--marging-m);
+  }
+
+  .recording_sign {
+    position: absolute;
+    top: calc(var(--padding-m) + 5px);
+    right:  calc(var(--padding-m) + 20px);
   }
 
   header > .useless__decor {
