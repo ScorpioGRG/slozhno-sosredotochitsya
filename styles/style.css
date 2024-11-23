@@ -13,9 +13,7 @@ body {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  /*исправление замечания строка 27 */
-  background-image: var(--background-image); 
-  background-attachment: fixed; 
+  background-image: var(--background-image);
   background-size: cover;
   background-position: bottom;
 }
@@ -116,7 +114,7 @@ body {
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: 1px solid var(--decor-color); 
+  outline: 1px solid var(--decor-color);
 }
 
 .header__theme-menu-button:focus {
@@ -169,7 +167,7 @@ body {
 }
 
 .section__layout_gallery {
-  margin-bottom: var(--marging-s); 
+  margin-bottom: var(--marging-s);
 }
 
 .section__title {
@@ -310,7 +308,6 @@ margin-bottom: 20px;
   }
 
   .section__layout_a article {
-    grid-column-start: 2; 
     grid-column-start: 2;
   }
 
@@ -327,8 +324,6 @@ margin-bottom: 20px;
     grid-column: 1/4;
     max-width: 30%;
   }
-
-  /*гипотетически считаем, что картинки - всегда последняя карточка*/
 
   .section__layout_gallery {
     display: grid;
