@@ -24,7 +24,7 @@
    outline: 1px solid var(--decor-color); 
   }*/
 
-  .useless__decor-text, .useless__decor_circle {
+  .recording_sign {
     display: none;
   }
 
@@ -43,7 +43,7 @@
     --article__title-color: #353430;
     --decor-color: #353430;
 
-    .useless__decor-text, .useless__decor_circle {
+    .recording_sign {
       display: none;
     }
   }

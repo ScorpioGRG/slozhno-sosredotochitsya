@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 body {
-  max-inline-size: 1024px;/*ограничим 1024px*/
+  max-inline-size: 1024px;/*ограничим 1024px  375 768 - ОТЛАДКА!!!*/
   background-color: var(--bg-color);
 }
 
@@ -13,70 +13,24 @@ body {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  /*исправление замечания строка 27 */
+  background-image: var(--background-image); 
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: bottom;
 }
 
 /* Пойдем по пути от мобильной версии и темной темы - это всем нравится */
 
 .header {
   display: grid;
-  min-block-size: 100vh; /*высота 668px на 375,  высота 1024 на 768;*/
+  block-size: 100vh; /* 100vh высота 668px на 375,  высота 1024 на 768;*/
+  min-block-size: 668px; /*штатно min! - ОТЛАДКА!!!  идем от мобильной версии ToDo - добавить для других разрешений экранов замечание строка 23 - ОТЛАДКА!!!  668 768 1024  - ОТЛАДКА!!!*/
+  /*max-block-size: 1024px; *//*отладка, удалить строку* 668 */
   padding: var(--padding-s);
   grid-template-columns: 1fr; /**/
-  grid-template-rows: 26px 1fr auto 1fr 26px; /*26px на всех разрешениях*/
-  background-image: var(--background-image)/*url(../images/cover-image-dark.png)*/;
-  background-size: cover;
-  background-position: bottom;
+  grid-template-rows: auto 1fr auto 1fr auto; /*26px на всех разрешениях - заменил на auto*/
   margin-bottom: var(--marging-s);
-}
-
-.useless__decor {
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 4px;
-  background-color: transparent;
-  color: var(--decor-color);
-  inline-size: auto;
-  justify-self: end;
-}
-
-.useless__decor_circle {
-  border-radius: 100%;
-  width: 9px;
-  height: 9px;
-  background-color: var(--decor-color);
-  box-shadow: 0 0 4px 2px var(--decor-color);
-}
-
-/*из за этого скрол*/
-.useless__decor_circle::before {
-  content:'REC';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 139%;
-  text-transform: uppercase;
-  position: absolute;
-  right: 42px;
-  bottom: 0px;
-}
-
-.useless__decor_upright_halfsquare {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid var(--decor-color);
-  border-right: 1px solid var(--decor-color);
-  width: 26px;
-  height: 26px;
-}
-
-.useless__decor_downleft_halfsquare {
-  border-bottom: 1px solid var(--decor-color);
-  border-left: 1px solid var(--decor-color);
-  width: 26px;
-  height: 26px;
 }
 
 .useless__decor_test {
@@ -86,13 +40,10 @@ body {
 
 .useless__decor_test::before {
   content: '';
-  /*position: relative;*/
-  border-top: 1px solid var(--main-text-color);
-  border-right: 1px solid var(--main-text-color);
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   width: 26px;
   height: 26px;
- /* top: calc(var(--padding-m) + 26px);
-  left: calc(100% - 46px);*/
   grid-row: 1;
   grid-column: -2;
   justify-self:last baseline;
@@ -100,25 +51,20 @@ body {
 
 .useless__decor_test::after {
   content:'';
-  /*position: absolute;*/ 
-  border-bottom: 1px solid var(--main-text-color);
-  border-left: 1px solid var(--main-text-color);
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
   width: 26px;
   height: 26px;
   grid-row: -2;
-  /*bottom: var(--padding-m);
-  right: calc(100% - 46px);*/
+  align-self:last baseline ;
 }
 
 .footer.useless__decor_test::before {
   content: '';
-  /*position: relative;*/
-  border-top: 1px solid var(--main-text-color);
-  border-right: 1px solid var(--main-text-color);
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
   width: 26px;
   height: 26px;
- /* top: calc(var(--padding-m) + 26px);
-  left: calc(100% - 46px);*/
   grid-row: 1;
   grid-column: -1;
   justify-self:last baseline;
@@ -126,12 +72,14 @@ body {
 
 .recording_sign {
   position: absolute;
-  top: calc(var(--padding-s) + 5px);
+  top: calc(var(--padding-s) + 2px);
   right:  calc(var(--padding-s) + 20px);
 }
 
 .recording_sign::before {
   content:'REC';
+  font-size: 18px;
+  color: var(--decor-color);
   padding-right: 10px;
 }
 
@@ -141,7 +89,7 @@ body {
   border-radius: 100%;
   width: 9px;
   height: 9px;
-  margin-top: 5px;
+  margin-top: 7px;
   background-color: var(--decor-color);
   box-shadow: 0 0 4px 2px var(--decor-color);
 }
@@ -149,6 +97,7 @@ body {
 .header__theme-menu {
   align-self: center;
   justify-self: end;
+  margin-bottom: 25px;
 }
 
 /*этот блок неизменен 375 - 768, шрифты, размеры - остаются*/
@@ -189,19 +138,20 @@ body {
 }
 
 .text__logo {
-  /*font-family: var(--main-font), sans-serif;*/
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /*116px at 375 условие для 375 - 768*/
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /*116px at 375 условие для 375 - 768  - ОТЛАДКА!!!*/
   line-height: 83%;
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--accent-color);
   text-transform: lowercase;
-  margin: 25px 0px 25px 0px;
   align-self: center;
 }
 
+.footer .text__logo {
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
 .header__title {
- /* font-family: var(--main-font), sans-serif;*/
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -209,20 +159,20 @@ body {
   background-color: var(--accent-color);
   align-self: center;
   text-align: left;
+  margin-top: 25px;
 }
 
-.article {
+.section {
   padding-left: var(--padding-s);
   padding-right: var(--padding-s);
   margin-bottom: 50px;
 }
 
-.article__layout_gallery {
-  margin-bottom: var(--marging-s); /*was 40*/
-}  
+.section__layout_gallery {
+  margin-bottom: var(--marging-s); 
+}
 
-.article__title {
-/*font-family: var(--main-font), sans-serif;*/
+.section__title {
 font-weight: 700;
 font-size: 18px;
 line-height: 130%;
@@ -230,8 +180,7 @@ color: var(--article__title-color);
 margin-bottom: 20px;
 }
 
-.article__chapter {
-  /*font-family: var(--main-font), sans-serif;*/
+.article__title {
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
@@ -252,7 +201,6 @@ margin-bottom: 20px;
 }
 
 .article__text {
-  /*font-family: var(--main-font), sans-serif;*/
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
@@ -267,14 +215,18 @@ margin-bottom: 20px;
   margin-bottom: 6px;/*по макету 10*/
 }
 
+.image:last-child {
+  margin-bottom: 0px;
+}
+
 .footer {
-  min-block-size: 100vh ; /*высота 668px на 375,  высота 1024 на 768;  масштабируем от телефона до планшета clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem), по условию все же 100vh*/
+  block-size: 100vh; /*min  100vh - ОТЛАДКА!  высота 668px на 375,  высота 1024 на 768;  масштабируем от телефона до планшета clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem), по условию все же 100vh*/
+  min-block-size: 668px; /* - min для мобильной версии - ОТЛАДКА!!!*/
+  /*max-block-size: 1024px; *//*отладка, удалить строку*/
   width: 100%;
-  padding-left: var(--padding-s);
-  padding-right: var(--padding-s);
+  padding: var(--padding-s);
   display: grid;
-  grid-template-rows: 26px auto 26px; /*26px 595px 26px - под макет*/
-  padding-bottom: var(--padding-s);
+  grid-template-rows: repeat(3, auto); /*26px 595px 26px - под макет*/
   text-align: center;
 }
 
@@ -284,7 +236,6 @@ margin-bottom: 20px;
 }
 
 .accent_shadowed__link:hover {
-  /*text-decoration: underline;*/
   cursor: pointer;
   border-bottom: 1px solid var(--main-text-color);
 }
@@ -300,8 +251,9 @@ margin-bottom: 20px;
 /*для избежания сюрпризов все @media в конце*/
 
 @media (width >= 768px) {
+
   .text__logo {
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);/*ОТЛАДКА 1024 планшет 120px */
   }
 
   .header {
@@ -312,7 +264,7 @@ margin-bottom: 20px;
 
   .recording_sign {
     position: absolute;
-    top: calc(var(--padding-m) + 5px);
+    top: calc(var(--padding-m) + 2px);
     right:  calc(var(--padding-m) + 20px);
   }
 
@@ -324,6 +276,7 @@ margin-bottom: 20px;
   .header__theme-menu {
     grid-row: 2;
     grid-column: 2;
+    margin-bottom: 30px;
   }
 
   header > .text__logo {
@@ -337,51 +290,47 @@ margin-bottom: 20px;
     grid-column: 2;
   }
 
-  .useless__decor_downleft_halfsquare {
-    grid-row: 5;
-    grid-column: 1;
-  }
-
-  .article {
+  .section {
     padding-left: var(--padding-m);
     padding-right: var(--padding-m);
     margin-bottom: 60px;
     column-gap: 20px;
   }
 
-/*два типа статей, назовем их "a" и "b"*/
+/*два типа статей, назовем их "a" и "b", что бы не привязываться к четности или конкретному виду, тем более, что он разный*/
 
-  .article__layout_a {
+  .section__layout_a {
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
 
-  .article__layout_a .article__title {
+  .section__layout_a .section__title {
     grid-column-start: 1;
     grid-row: span 3;
   }
 
-  .article__layout_a section {
+  .section__layout_a article {
+    grid-column-start: 2; 
     grid-column-start: 2;
   }
 
-  .article__layout_b {
+  .section__layout_b {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .article__layout_b section {
+  .section__layout_b article {
     grid-column: 1/4;
   }
 
-  .article__layout_b .article__title {
+  .section__layout_b .section__title {
     grid-column: 1/4;
     max-width: 30%;
   }
 
   /*гипотетически считаем, что картинки - всегда последняя карточка*/
 
-  .article__layout_gallery {
+  .section__layout_gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -389,17 +338,17 @@ margin-bottom: 20px;
     margin-bottom: var(--marging-m);
   }
 
-  .article__layout_gallery .article__chapter {
+  .section__layout_gallery .article__title {
     grid-column: span 3;
     margin-bottom: 0px;
   }
 
    .article__sub__chapter {
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
-  p + .article__sub__chapter {
-    margin-top: 0px;
+  .chapters {
+    margin-top: 20px;
   }
 
   .image {
@@ -438,69 +387,43 @@ margin-bottom: 20px;
     text-align: center;
   }
 
-  .footer > .useless__decor_downleft_halfsquare {
-    grid-row: 3;
-    grid-column: 1;
-  }
-
   .footer {
-    /*min-block-size: 100vh;*/
-    /*display: grid;*/
-    /*grid-template-rows: 26px auto 26px;*/  /*26px 932px 26px - 768*/
     padding: var(--padding-m);
   }
 }
 
 @media (width >= 1024px) {
-/*  .header {
-    min-block-size: 100vh;
-  }*/
 
   .header__theme-menu {
-    align-self: center;
     justify-self: center;
     grid-row: 1;
     grid-column: 1/3;
+    margin-bottom: 0px;
   }
 
   .header__theme-menu-list {
     display: flex;
-    margin-top: 10px;
     gap: 10px;
   }
-  .article__layout_b {
+
+  .header__theme-menu-list .header__theme-menu-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .section__layout_a {
+    column-gap: 10px;
+  }
+
+  .section__layout_b {
     column-gap: 20px;
   }
 
-  .article__layout_b .article__title {
+  .section__layout_b .article__title {
     grid-row-start: 1;
     grid-row-end: 2;
   }
 
-  .article {
-    column-gap: 10px;
-  }
-
-
-  .article__layout_b section {
+  .section__layout_b article {
     grid-column: auto;
   }
-
-
- /* .image:nth-child(4) { 
-    height: 100%;
-  }*/
-  /*.image:nth-child(6) {
-    grid-column: 2/4;
-    grid-row: 4;
-    object-fit: cover;
-    width:  100%;
-  }*/
-  
-  .footer {
-    min-block-size: 100vh; /*по рекомендации*/
-    grid-template-rows: 26px auto 26px;  /*тут можно клампом, (но не нужно) 26px 675px 26px*/
-    padding-bottom: var(--padding-m);
-  }
-
- }
+}
