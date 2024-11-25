@@ -31,12 +31,12 @@ body {
   margin-bottom: var(--marging-s);
 }
 
-.useless__decor_test {
+.useless__decor {
   position: relative;
-  /*пустой класс для тестирования через него рисуем уголки*/
+  /*пустой класс через него рисуем уголки*/
 }
 
-.useless__decor_test::before {
+.useless__decor::before {
   content: '';
   border-top: 1px solid var(--decor-color);
   border-right: 1px solid var(--decor-color);
@@ -47,17 +47,17 @@ body {
   justify-self:last baseline;
 }
 
-.useless__decor_test::after {
+.useless__decor::after {
   content:'';
   border-bottom: 1px solid var(--decor-color);
   border-left: 1px solid var(--decor-color);
   width: 26px;
   height: 26px;
   grid-row: -2;
-  align-self:last baseline ;
+  align-self:last baseline;
 }
 
-.footer.useless__decor_test::before {
+.footer.useless__decor::before {
   content: '';
   border-top: 1px solid var(--decor-color);
   border-right: 1px solid var(--decor-color);
@@ -71,7 +71,7 @@ body {
 .recording_sign {
   position: absolute;
   top: calc(var(--padding-s) + 2px);
-  right:  calc(var(--padding-s) + 20px);
+  right: calc(var(--padding-s) + 20px);
 }
 
 .recording_sign::before {
@@ -216,6 +216,8 @@ margin-bottom: 20px;
 .image:last-child {
   margin-bottom: 0px;
 }
+
+/*Заметка на 668*375 - по автотестам footer по ощущениям на 5-7px расходится (весь блок идет ниже), по perfectPixel около 2px, по инспектору все должно быть точно*/
 
 .footer {
   block-size: 100vh; /*min  100vh - ОТЛАДКА!  высота 668px на 375,  высота 1024 на 768;  масштабируем от телефона до планшета clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem), по условию все же 100vh*/
