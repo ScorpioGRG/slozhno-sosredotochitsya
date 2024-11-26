@@ -79,15 +79,17 @@ body {
   font-size: 18px;
   color: var(--decor-color);
   padding-right: 10px;
+
 }
 
 .recording_sign::after {
   content:'';
   position: absolute;
+  top: 7px;
+  right: -9px;
   border-radius: 100%;
   width: 9px;
   height: 9px;
-  margin-top: 7px;
   background-color: var(--decor-color);
   box-shadow: 0 0 4px 2px var(--decor-color);
 }
@@ -187,13 +189,8 @@ margin-bottom: 20px;
   margin-bottom: 10px; /*везде*/
 }
 
-.article__sub__chapter {
-  font-family: var(--main-font), sans-serif;
+.article__chapter {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 130%;
-  background-color: var(--accent-color);
-  color: var(--sub-title-color);
   margin-bottom: 10px;
   margin-top: 20px;
 }
@@ -202,7 +199,7 @@ margin-bottom: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
-  color:var( --main-text-color);
+  color:var(--main-text-color);
   margin-bottom: 20px; /*везде*/
 }
 
@@ -299,30 +296,30 @@ margin-bottom: 20px;
 
 /*два типа статей, назовем их "a" и "b", что бы не привязываться к четности или конкретному виду, тем более, что он разный*/
 
-  .section__layout_a {
+  .section__theme_single_column {
     display: grid;
     grid-template-columns: 1fr 2fr;
   }
 
-  .section__layout_a .section__title {
+  .section__theme_single_column .section__title {
     grid-column-start: 1;
     grid-row: span 3;
   }
 
-  .section__layout_a article {
+  .section__theme_single_column article {
     grid-column-start: 2;
   }
 
-  .section__layout_b {
+  .section__theme_multi_column {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .section__layout_b article {
+  .section__theme_multi_column article {
     grid-column: 1/4;
   }
 
-  .section__layout_b .section__title {
+  .section__theme_multi_column .section__title {
     grid-column: 1/4;
     max-width: 30%;
   }
@@ -340,7 +337,7 @@ margin-bottom: 20px;
     margin-bottom: 0px;
   }
 
-   .article__sub__chapter {
+   .article__chapter {
     margin-top: 0px;
   }
 
@@ -407,20 +404,20 @@ margin-bottom: 20px;
     margin-bottom: 0px;
   }
 
-  .section__layout_a {
+  .section__theme_single_column {
     column-gap: 10px;
   }
 
-  .section__layout_b {
+  .section__theme_multi_column {
     column-gap: 20px;
   }
 
-  .section__layout_b .article__title {
+  .section__theme_multi_column .article__title {
     grid-row-start: 1;
     grid-row-end: 2;
   }
 
-  .section__layout_b article {
+  .section__theme_multi_column article {
     grid-column: auto;
   }
 }

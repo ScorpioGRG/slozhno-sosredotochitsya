@@ -22,5 +22,9 @@
   /*.header__theme-menu-button_type_dark {
     outline: 1px solid var(--decor-color);
   }*/
+  .recording_sign {
+   display: initial;
+  }
+
 }
 
